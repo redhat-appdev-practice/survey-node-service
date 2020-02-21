@@ -7,9 +7,12 @@ var port = process.env.PORT || 8080;
 
 app.use(cors());
 app.use(helmet());
+
+// Use body-parser to help parse request bodies into JSON
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// Use the router we defined in src/routes/router.js
 app.use(require('./src/routes/router'));
 
 var server = app.listen(port, () => {
