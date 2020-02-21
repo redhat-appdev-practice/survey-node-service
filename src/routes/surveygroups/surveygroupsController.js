@@ -52,19 +52,19 @@ router.get('/:surveyGroupId/submissions', (req, res) => {
     // return 404 if no survey with ID surveyGroupId was found
     let dummySurveySubmissions = [
         {
-            "id": "f1ad7649-eb70-4499-9c82-a63fe2c6dc71",
-            "surveyAuthorId": "9169105a-92eb-4a40-b07c-ac58ead69ea3",
-            "targetOfSurveyId": "e3357750-1329-430b-95c1-8d773ad6ac16",
-            "projectId": "f9238beb-9649-4983-9059-4f0ee372d56e",
-            "submissionDate": "2020-02-29T20:03:26Z",
-            "ratings": 
+            'id': 'f1ad7649-eb70-4499-9c82-a63fe2c6dc71',
+            'surveyAuthorId': '9169105a-92eb-4a40-b07c-ac58ead69ea3',
+            'targetOfSurveyId': 'e3357750-1329-430b-95c1-8d773ad6ac16',
+            'projectId': 'f9238beb-9649-4983-9059-4f0ee372d56e',
+            'submissionDate': '2020-02-29T20:03:26Z',
+            'ratings': 
             [
                     {
-                        "skill": "Openshift",
-                        "rating": 0
+                        'skill': 'Openshift',
+                        'rating': 0
                     }
             ],
-            "feedback": "John was a pleasure to work with and extremely knowledgeable in REST."
+            'feedback': 'John was a pleasure to work with and extremely knowledgeable in REST.'
         }
     ];
 
@@ -91,33 +91,33 @@ router.post('/:surveyGroupId/submissions', (req, res) => {
 router.get('/:surveyGroupId', (req, res) => {
     let surveyGroupId = req.params.surveyGroupId;
     let dummySurveyGroup = {
-        "id": "f9238beb-9649-4983-9059-4f0ee372d56e",
-        "opportunityId": "3456NAS",
-        "projectId": "43966",
-        "projectName": "NASA App Modernization",
-        "projectCreatorId": "janedoe@redhat.com",
-        "tsmId": "timmytsm@redhat.com",
-        "description": "A project for migrating several JEE applications to OpenShift.",
-        "createdDate": "2020-01-29T20:03:26Z",
-        "modifiedDate": "2020-02-29T20:03:26Z",
-        "employees": 
+        'id': 'f9238beb-9649-4983-9059-4f0ee372d56e',
+        'opportunityId': '3456NAS',
+        'projectId': '43966',
+        'projectName': 'NASA App Modernization',
+        'projectCreatorId': 'janedoe@redhat.com',
+        'tsmId': 'timmytsm@redhat.com',
+        'description': 'A project for migrating several JEE applications to OpenShift.',
+        'createdDate': '2020-01-29T20:03:26Z',
+        'modifiedDate': '2020-02-29T20:03:26Z',
+        'employees': 
         [
             {
-                "id": "string",
-                "startProjectDate": "2020-01-29T20:03:26Z",
-                "endProjectDate": "2020-02-29T20:03:26Z",
-                "email": "hgranger@redhat.com",
-                "role": "Consultant"
+                'id': 'string',
+                'startProjectDate': '2020-01-29T20:03:26Z',
+                'endProjectDate': '2020-02-29T20:03:26Z',
+                'email': 'hgranger@redhat.com',
+                'role': 'Consultant'
             }
         ],
-        "skillsUsed": 
+        'skillsUsed': 
         [
             [
                 {
-                    "id": "d567521f-13a6-4237-936c-40bbbf388bc5",
-                    "skill": "Crucial Conversations",
-                    "description": "The ability to have cruical conversations with clients.",
-                    "category": "leadership"
+                    'id': 'd567521f-13a6-4237-936c-40bbbf388bc5',
+                    'skill': 'Crucial Conversations',
+                    'description': 'The ability to have cruical conversations with clients.',
+                    'category': 'leadership'
                 }
             ]
         ]
@@ -133,13 +133,20 @@ router.put('/:surveyGroupId', (req, res) => {
     let body = req.body;
     let surveyGroupId = req.params.surveyGroupId;
     if (!body.opportunityId || !body.projectId || !body.projectName || !body.projectCreatorId || !body.tsmId) {
-        return res.status(400).json({ 'message': 'Missing required fields' });
+        return res.status(400).json({ message: 'Missing required fields' });
     }
 
     // TODO: Update the database entry identified by surveyGroupId
     // with information provided in request body following model in
     // models/surveyGroupModel.js
     return res.status(200).json({ message: 'Success' });
+});
+
+router.delete('/:surveyGroupId', (req, res) => {
+    let surveyGroupId = req.params.surveyGroupId;
+
+    // TODO: delete survey group with ID surveyGroupId from DB
+    return res.status(204).json({ message: 'Survey group deleted' });
 });
 
 module.exports = router;

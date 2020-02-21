@@ -5,10 +5,10 @@ router.get('/', (req, res) => {
     
     let dummySkills = [
         {
-            "id": "d567521f-13a6-4237-936c-40bbbf388bc5",
-            "skill": "Crucial Conversations",
-            "description": "The ability to have cruical conversations with clients.",
-            "category": "leadership"
+            'id': 'd567521f-13a6-4237-936c-40bbbf388bc5',
+            'skill': 'Crucial Conversations',
+            'description': 'The ability to have cruical conversations with clients.',
+            'category': 'leadership'
         }
     ];
 
