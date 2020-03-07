@@ -5,16 +5,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-        		echo '****** Compilation and Testing of Node Survey Service ******'
-        		echo '****** NPM clean package ******'
-        		sh './mvnw package -DskipTests -P dev'
-                sh 'mkdir deployments' 
-                sh 'cp target/*.jar deployments/' 
+        	echo '****** Compilation and Testing of Node Survey Service ******'
+        	echo '****** NPM list ******'
+        		sh 'npm list'
             }
         }
         stage('Promote to Dev') { 
             steps {
-                echo '***** Promoting Spring CRUD Service to DEV *****' 
+                echo '***** Promoting Node Survey Service *****' 
                 sh 'ls target'
                 script {
                     openshift.withCluster() {
