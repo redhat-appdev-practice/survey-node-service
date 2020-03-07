@@ -7,7 +7,7 @@ pipeline {
             steps {
         	echo '****** Compilation and Testing of Node Survey Service ******'
         	echo '****** NPM list ******'
-        		sh 'npm list'
+        	sh 'npm list'
             }
         }
         stage('Promote to Dev') { 
