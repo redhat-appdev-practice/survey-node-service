@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label "jenkins-slave-npm"
+        label "jenkins-slave-mvn"
     }
     stages {
         stage('Build') {
