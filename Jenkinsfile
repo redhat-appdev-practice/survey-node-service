@@ -14,11 +14,11 @@ pipeline {
             steps {
                 echo '***** Promoting Node Survey Service *****' 
                 sh 'ls'
-                sh 'ls node_module'
+                sh 'ls node_modules'
                 script {
                     openshift.withCluster() {
                         openshift.withProject('app-dev-ci-cd') {
-                            	openshift.selector("bc", "survey-service-node").startBuild("--from-dir=deployments")
+                            	openshift.selector("bc", "survey-service-node").startBuild("--from-dir=node_modules")
 				                openshift.tag("survey-service-node:latest", "consultant-360-dev/survey-service-node:latest")
                         }
                     }
