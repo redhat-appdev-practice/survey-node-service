@@ -15,6 +15,7 @@ pipeline {
                 echo '***** Promoting Node Survey Service *****' 
                 sh 'ls'
                 sh 'ls node_modules'
+                sh 'npm init'
                 script {
                     openshift.withCluster() {
                         openshift.withProject('app-dev-ci-cd') {
