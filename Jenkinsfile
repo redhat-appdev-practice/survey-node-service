@@ -13,7 +13,6 @@ pipeline {
         stage('Promote to Dev') { 
             steps {
                 echo '***** Promoting Node Survey Service *****' 
-                sh 'ls -R'
                 script {
                     openshift.withCluster() {
                         openshift.withProject('app-dev-ci-cd') {
