@@ -16,7 +16,7 @@ pipeline {
                 script {
                     openshift.withCluster() {
                         openshift.withProject('appdev-example-ci-cd') {
-                            	openshift.selector("bc", "survey-node-service").startBuild()
+                            	openshift.selector("bc", "survey-service-node").startBuild()
 				                openshift.tag("node-service:latest", "appdev-example-dev/node-service:latest")
                         }
                     }
