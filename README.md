@@ -6,7 +6,7 @@ You can refer to our OpenAPI spec here: http://survey-openapi-consultant-360-dev
 ### Local Installation
 
 ```
-git clone https://gitlab.consulting.redhat.com/appdev-coe/consultant-360-feedback/survey-node-service.git
+git clone https://github.com/redhat-appdev-practice/survey-node-service.git
 npm install
 ```
 
@@ -27,7 +27,7 @@ Or you can deploy in your own cluster from OpenTLC or RHPDS.
 
 #### Steps to build and deploy in Openshift
 
-Refer to the instructions here: https://gitlab.consulting.redhat.com/appdev-coe/consultant-360-feedback/infrastructure/wikis/Deploying-A-Service <br/>
+Refer to the instructions here: https://github.com/redhat-appdev-practice/infrastructure/wikis/Deploying-A-Service <br/>
 
 This is documentation for deploying the all of Consultant360's CI/CD pipelines and applications. 
 Follow all the instructions to deploy the node service and the jenkins pipeline that will manage the build.
