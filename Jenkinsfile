@@ -48,7 +48,7 @@ pipeline {
     stage('Build Container Image'){
       steps {
         sh """
-        mkdir oc-build/deployment
+        mkdir -p oc-build/deployment
         cp index.js oc-build/deployment/
         cp -fr src oc-build/deployment/
         """
