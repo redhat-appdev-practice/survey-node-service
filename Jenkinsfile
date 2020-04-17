@@ -49,8 +49,10 @@ pipeline {
       steps {
         sh """
         mkdir -p oc-build/deployment
-        cp index.js oc-build/deployment/
+        cp package.json oc-build/deployment/
+        cp app.js oc-build/deployment/
         cp -fr src oc-build/deployment/
+        cp -fr node_modules oc-build/deployment/
         """
 
         // Build container image using local Openshift cluster
