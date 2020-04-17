@@ -22,7 +22,7 @@ pipeline {
   // After Pipeline completes the Pod is killed so every run will have clean
   // workspace
   agent {
-    label 'jenkins-slave-mvn'
+    label 'jenkins-slave-npm'
   }
 
   // Pipeline TESTs start here
