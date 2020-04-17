@@ -1,7 +1,11 @@
-## survey-node-service
+## Node.Js ReSTful API Example
+The App Dev Practice has create a Node.Js application that expose a ReSTful API.  The application can be used as a starter Node.Js application or as a unit to deploy to OCP clusters.
 
-This repository contains the Node.js implementation of the survey group service RESTful API. <br/>
-You can refer to our OpenAPI spec here: http://survey-openapi-consultant-360-dev.apps.shared-dev.dev.openshift.opentlc.com/#operation/createSubmission
+## Survey Groups API
+The application manages the concept of a **Survey Group**.  This represents the target of surveys for a Red Hat consulting project, the skills required to cmoplete the project, and the employee(s) assigned to the project.
+
+## API Definition
+This service is built in a contract-first manner.  You can find the API definition hosted at <TBD>.
 
 ### Local Installation
 
@@ -22,8 +26,8 @@ This runs the application locally, using the environment variable `PORT` if you 
 
 ## Deploying the application in Openshift
 
-You can deploy to the existing projects in our cluster: https://console-openshift-console.apps.shared-dev.dev.openshift.opentlc.com/k8s/cluster/projects<br/>
-Or you can deploy in your own cluster from OpenTLC or RHPDS.
+This service comes ready to deploy in an Openshift cluster using the provided Jenkinsfile.
+
 
 #### Steps to build and deploy in Openshift
 
@@ -41,5 +45,3 @@ Alternatively, you can use curl. Ex:
 ```
 curl http://localhost:8080/surveyGroups/
 ```
-
-### TODO write automated tests in Jest/Mocha
