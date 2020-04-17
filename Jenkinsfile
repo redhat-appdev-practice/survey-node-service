@@ -47,12 +47,17 @@ pipeline {
     // Build Container Image using the artifacts produced in previous stages
     stage('Build Container Image'){
       steps {
+        sh """
+        mkdir oc-build/deployment
+        cp index.js oc-build/deployment/
+        cp -fr src oc-build/deployment/
+        """
 
         // Build container image using local Openshift cluster
         // Giving all the artifacts to OpenShift Binary Build
         // This places your artifacts into right location inside your S2I image
         // if the S2I image supports it.
-        binaryBuild(projectName: env.NAMESPACE, buildConfigName: env.APP_NAME, buildFromPath: env.PWD)
+        binaryBuild(projectName: env.NAMESPACE, buildConfigName: env.APP_NAME, buildFromPath: 'oc-build')
       }
     }
 
