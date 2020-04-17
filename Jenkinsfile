@@ -38,21 +38,21 @@ pipeline {
     }
 
     // Run NPM unit tests
-    // stage('Unit Test') {   // No tests have yet been written
-    //   steps {
-    //     sh "npm run test"
-    //   }
-    // }
+    stage('Unit Test') {   // No tests have yet been written
+      steps {
+        sh "echo NO TESTS AVAILABLE YET" // "npm run test"
+      }
+    }
 
     // Build Container Image using the artifacts produced in previous stages
     stage('Build Container Image'){
       steps {
         sh """
-        mkdir -p oc-build/deployment
-        cp package.json oc-build/deployment/
-        cp app.js oc-build/deployment/
-        cp -fr src oc-build/deployment/
-        cp -fr node_modules oc-build/deployment/
+        mkdir -p oc-build
+        cp package.json oc-build/
+        cp app.js oc-build/
+        cp -fr src oc-build/
+        cp -fr node_modules oc-build/
         """
 
         // Build container image using local Openshift cluster
