@@ -5,7 +5,7 @@ The App Dev Practice has create a Node.Js application that expose a ReSTful API.
 The application manages the concept of a **Survey Group**.  This represents the target of surveys for a Red Hat consulting project, the skills required to cmoplete the project, and the employee(s) assigned to the project.
 
 ## API Definition
-This service is built in a contract-first manner.  You can find the API definition hosted at <TBD>.
+This service is built in a contract-first manner.  You can find the API definition hosted at https://studio.apicur.io/apis/26569.
 
 ### Local Installation
 
